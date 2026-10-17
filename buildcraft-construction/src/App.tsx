@@ -67,7 +67,9 @@ function App() {
       ? projects
       : projects.filter((project) => project.category === filter);
 
-  function handleChange(event) {
+  function handleChange(
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) {
     const { name, value } = event.target;
 
     setForm((previousForm) => ({
@@ -76,7 +78,7 @@ function App() {
     }));
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const enquiryMessage = [
